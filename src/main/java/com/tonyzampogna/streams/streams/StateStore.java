@@ -37,6 +37,7 @@ public class StateStore {
     public void setState(String key, RequestState requestState) {
         log.info("Setting the group state to {} for key {}", requestState, key);
         stateStore.put(key, requestState.toString());
+        stateStore.all().forEachRemaining(keyValue -> log.debug("Keys in the group state store: {}: {}", keyValue.key, keyValue.value));
     }
 
     /**
