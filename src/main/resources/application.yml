@@ -1,0 +1,8 @@
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        properties:
+            state-store-directory: /var/stream-data/
+        consumer:
+            group-id: streams-example
+            auto-offset-reset: latest
